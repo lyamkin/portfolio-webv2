@@ -1,0 +1,105 @@
+{% extends "master.html.twig" %} {% block title %}Andrey Lyamkin | Portfolio{%
+endblock %} {% block content %}
+<div class="container">
+  <!-- ABOUT SECTION -->
+
+  <section id="header" class="header">
+    <div class="row">
+      <div class="col text-center text-muted py-5">
+        <h1>Andrey Lyamkin</h1>
+        <h2>Full-stack web developer</h2>
+
+        <div class="mt-4">
+          <a
+            class="header-link header-link-1"
+            href="https://www.linkedin.com/in/andreylyamkin/"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin icon-md"></i>
+          </a>
+          <a
+            class="header-link header-link-2"
+            href="https://github.com/lyamkin"
+            target="_blank"
+          >
+            <i class="fab fa-github-alt icon-md"></i>
+          </a>
+          <a class="header-link header-link-3" href="#contact">
+            <i class="fas fa-envelope icon-md"></i>
+          </a>
+          <a
+            class="header-link header-link-4"
+            href="/downloads/Andrey-Lyamkin_resume.pdf"
+            target="_blank"
+          >
+            <i class="fas fa-file-pdf icon-md"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+
+  <section id="projects" class="projects text-muted py-5">
+    <h2 class="text-muted header-secondary text-center">my recent projects</h2>
+    {% for project in projects %}
+    <div class="row my-5 border-top border-bottom py-4">
+      <div class="col col-12 col-lg-4">
+        <img
+          src="/images/projects/{{ project.imagePath }}"
+          alt="Adventure project"
+          class="img-fluid img-thumbnail"
+        />
+      </div>
+      <div class="col col-12 col-lg-8">
+        <h4>{{ project.title }}</h4>
+        <p class="small">{{ project.date }}</p>
+        <p>
+          {{ project.description }}
+        </p>
+        <p>
+          <span class="fw-bold">Used tools and technologies: </span
+          ><span
+            class="text-uppercase project-tools"
+            data-tools-id="{{ project.id }}"
+          ></span>
+        </p>
+        <a
+          href="{{ project.demoAddr }}"
+          class="btn btn-outline-secondary"
+          target="_blank"
+          >Demo</a
+        >
+        <a
+          href="{{ project.gitAddr }}"
+          class="btn btn-outline-secondary"
+          target="_blank"
+          >Git</a
+        >
+        <a
+          class="btn btn-outline-secondary read-more-details"
+          data-bs-toggle="collapse"
+          data-details-id="{{ project.id }}"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapse-details-project-{{ project.id }}"
+          href="#collapse-details-project-{{ project.id }}"
+          >Read more</a
+        >
+      </div>
+      <div class="collapse my-2" id="collapse-details-project-{{ project.id }}">
+        <div>
+          <span class="lead">What I have learned working on this project:</span>
+          <ul
+            class="px-5 project-details"
+            id="detail-list-project-{{ project.id }}"
+            data-detail-list-id="{{ project.id }}"
+          ></ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+/* Headers styles*/
+.header-secondary {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+}
+
+.header-first {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+/* Navigation bar */
+.navbar {
+  padding: 1rem;
+  opacity: 0.9;
+}
+.navbar a:visited,
+.navbar a:link {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.navbar a:hover,
+.navbar a:active {
+  border-bottom: 0.5px solid #0082c6;
+}
+.navbar li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+/* Header section */
+.header {
+  margin-top: 3rem;
+  position: relative;
+}
+.header {
+  margin-top: 4.68rem;
+  position: relative;
+}
+.header-link:not(:last-child) {
+  margin-right: 1rem;
+}
+.header-link:link,
+.header-link:visited {
+  color: #6c757d;
+}
+.header-link-1:hover,
+.header-link-1:active {
+  color: #007bb5;
+}
+.header-link-2:hover,
+.header-link-2:active {
+  color: #000000;
+}
+.header-link-3:hover,
+.header-link-3:active {
+  color: #dd4b39;
+}
+.header-link-4:hover,
+.header-link-4:active {
+  color: #f40f02;
+}
+
+/* Icons style*/
+.icon-lg {
+  font-size: 2.5rem;
+}
+
+.icon-md {
+  font-size: 2rem;
+}
