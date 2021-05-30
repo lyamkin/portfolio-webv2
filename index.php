@@ -9,8 +9,8 @@ use Slim\Http\Response;
 
 if (strpos($_SERVER['HTTP_HOST'], "alyamkin.ca") !== false) {
     // hosting on ipd24.ca
-    DB::$dbName = 'cp5003_portfolio';
-    DB::$user = 'cp5003_portfolio';
+    DB::$dbName = 'cp5005_portfolio';
+    DB::$user = 'cp5005_portfolio';
     DB::$password = 'Zsu-nB.r8xD2oXbf';
 } else { // local computer
     DB::$dbName = 'portfolio';
@@ -18,11 +18,6 @@ if (strpos($_SERVER['HTTP_HOST'], "alyamkin.ca") !== false) {
     DB::$password = 'Zsu-nB.r8xD2oXbf';
     DB::$port = 3333;
 }
-
-    // DB::$dbName = 'portfolio';
-    // DB::$user = 'portfolio';
-    // DB::$password = 'Zsu-nB.r8xD2oXbf';
-    // DB::$port = 3333;
 
 // Create and configure Slim app
 $config = ['settings' => [
@@ -54,6 +49,16 @@ $app->get('/', function (Request $request, Response $response, $args) {
     $projects = DB::query("SELECT * FROM projects ORDER BY date DESC");
     return $this->view->render($response, 'index.html.twig', ['projects' => $projects]);
 });
+
+// About me
+$app->get('/aboutme', function (Request $request, Response $response, $args) {
+    return $this->view->render($response, 'aboutme.html.twig');
+});
+// Education and skills
+$app->get('/eduskills', function (Request $request, Response $response, $args) {
+    return $this->view->render($response, 'eduskills.html.twig');
+});
+
 // load details ajax
 $app->get('/ajaxgetdetails/{id:[0-9]+}', function (Request $request, Response $response, $args) {
     $details = DB::query("SELECT * FROM details WHERE projectId=%s", $args['id']);
