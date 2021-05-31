@@ -58,6 +58,10 @@ $app->get('/aboutme', function (Request $request, Response $response, $args) {
 $app->get('/eduskills', function (Request $request, Response $response, $args) {
     return $this->view->render($response, 'eduskills.html.twig');
 });
+// Contact me
+$app->get('/contact', function (Request $request, Response $response, $args) {
+    return $this->view->render($response, 'contact.html.twig');
+});
 
 // load details ajax
 $app->get('/ajaxgetdetails/{id:[0-9]+}', function (Request $request, Response $response, $args) {

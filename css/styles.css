@@ -32,10 +32,6 @@
 
 /* Header section */
 .header {
-  margin-top: 3rem;
-  position: relative;
-}
-.header {
   margin-top: 4.68rem;
   position: relative;
 }
@@ -78,7 +74,9 @@
 }
 
 /*EDUCATION & SKILLS*/
-.eduskills {
+.education,
+.skills,
+.contactme {
   margin-top: 4.68rem;
   position: relative;
 }
@@ -264,4 +262,31 @@
     left: -14px;
     right: auto;
   }
+}
+
+/*FOOTER*/
+.bg-primary-custom {
+  background-color: #283e4a;
+  opacity: 0.8;
+}
+
+.footer-link:not(:last-child) {
+  margin-right: 1rem;
+}
+.footer-link:link,
+.footer-link:visited {
+  color: #fff;
+}
+.footer-link-1:hover,
+.footer-link-1:active {
+  color: #007bb5;
+}
+.footer-link-2:hover,
+.footer-link-2:active {
+  color: #000000;
+}
+
+/* CONTACT ME*/
+.contactme {
+  height: 80vh;
 }

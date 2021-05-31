@@ -15,4 +15,6 @@ $("document").ready(function () {
     let projectId = $(this).data("toolsId");
     $(this).load("/ajaxgettools/" + projectId);
   });
+  // Get the current year for the copyright
+  $("#year").text(new Date().getFullYear());
 });
